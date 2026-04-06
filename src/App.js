@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-// const initialItems = [
-//   { id: 1, name: "item1", quantity: 1, packed: false },
-//   { id: 2, name: "item2", quantity: 1, packed: false },
-//   { id: 3, name: "item3", quantity: 1, packed: false },
-// ];
+
 export default function App() {
   //get saved items data from local storage
   const [items, setItems] = useState(() => {
