@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import Form from "./components/Form";
-import Logo from "./components/Logo";
-import PackingList from "./components/PackingList";
-import Stats from "./components/Stats";
+import Form from "./Form";
+import Logo from "./Logo";
+import PackingList from "./PackingList";
+import Stats from "./Stats";
 
 export default function App() {
   //get saved items data from local storage
