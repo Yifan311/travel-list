@@ -28,6 +28,14 @@ export default function App() {
     );
   }
 
+  function handleClearList() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?",
+    );
+
+    if (confirmed) setItems([]);
+  }
+
   //save items to local storage when items update each time
   useEffect(
     () => localStorage.setItem("items", JSON.stringify(items)),
@@ -43,6 +51,7 @@ export default function App() {
         setItems={setItems}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
       />
 
       <Stats items={items} />

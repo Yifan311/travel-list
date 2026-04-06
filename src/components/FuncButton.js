@@ -1,4 +1,4 @@
-export default function FuncButton({ setItems, sortBy, setSortBy }) {
+export default function FuncButton({ sortBy, setSortBy, onClearList }) {
   return (
     <div className="actions">
       <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -6,7 +6,7 @@ export default function FuncButton({ setItems, sortBy, setSortBy }) {
         <option value={"description"}>SORT BY DESCRIPTION</option>
         <option value={"packed"}>SORT BY PACKED STATUS</option>
       </select>
-      <button onClick={() => setItems([])}>CLEAR LIST</button>
+      <button onClick={onClearList}>CLEAR LIST</button>
     </div>
   );
 }
