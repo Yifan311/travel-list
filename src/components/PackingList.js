@@ -6,6 +6,7 @@ export default function PackingList({
   setItems,
   onToggleItem,
   onDeleteItem,
+  onClearList,
 }) {
   const [sortBy, setSortBy] = useState("input");
   let sortedItem;
@@ -25,7 +26,6 @@ export default function PackingList({
         {sortedItem.map((item) => (
           <Item
             item={item}
-            setItems={setItems}
             onToggleItem={onToggleItem}
             onDeleteItem={onDeleteItem}
             key={item.id}
@@ -37,6 +37,7 @@ export default function PackingList({
         items={items}
         sortBy={sortBy}
         setSortBy={setSortBy}
+        onClearList={onClearList}
       />
     </div>
   );

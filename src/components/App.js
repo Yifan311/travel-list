@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import Form from "./components/Form";
-import Logo from "./components/Logo";
-import PackingList from "./components/PackingList";
-import Stats from "./components/Stats";
+import Form from "./Form";
+import Logo from "./Logo";
+import PackingList from "./PackingList";
+import Stats from "./Stats";
 
 export default function App() {
   //get saved items data from local storage
@@ -28,6 +28,14 @@ export default function App() {
     );
   }
 
+  function handleClearList() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?",
+    );
+
+    if (confirmed) setItems([]);
+  }
+
   //save items to local storage when items update each time
   useEffect(
     () => localStorage.setItem("items", JSON.stringify(items)),
@@ -43,6 +51,7 @@ export default function App() {
         setItems={setItems}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
       />
 
       <Stats items={items} />
